@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Portfolio</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+ <style>
+    body {
+      font-family: 'Fira Code', monospace;
+      background-color: #262123;
+      color: #fdf7ff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #DAFDBA; 
+      font-family: Arial, sans-serif;
+      color: #262123;
+      padding: 20px;
+      text-align: left;
+    }
+    .container {
+      font-family: 'Fira Code', monospace;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: 'Fira Code', monospace;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-gap: 7px;
+      font-family: 'Fira Code', monospace;
+      font-size: 28px;
+      color: #262123;
+      align-items: center;
+      padding: 2px;
+    }
+    .gallery img {
+      width: 37%;
+      height: auto;
+      cursor: pointer;
+      margin-bottom: 50px;
+      font-family: 'Fira Code', monospace;
+    }
+    .gallery .right-side {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .gallery .right-side ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .gallery .right-side li a {
+      text-decoration: none;
+      color: black;
+      margin-left: 10px;
+    }
+    
+    .modal {
+      font-family: 'Fira Code', monospace;
+      color: #262123;
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0); 
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .modal-content {
+      background-color: #d9ffb6;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    .modal-content ul {
+    list-style-type: none;
+    padding: 0;
+    display: center;
+    justify-content: center-end;
+    }
+    .modal-content ul li {
+    margin-left: 10px;
+    }
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }  
+
+    .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    header .socials {
+      position: absolute;
+      right: 0;
+}
+
+ </style>
+ <script>
+    function openModal(project) {
+      var modal = document.getElementById(project);
+      modal.style.display = "block";
+    }
+
+    function closeModal(project) {
+      var modal = document.getElementById(project);
+      modal.style.display = "none";
+    }
+ </script>
+</head>
+<body>
+ <header>
+    <h1>Siddharth Jadhav</h1>
+    <p>Fresher | Computer Scientist</p>
+  <div class="socials">
+    <a href="www.linkedin.com/in/siddharth-jadhav-b291a4160" target="_blank">LinkedIn</a>
+    <a href="https://github.com/jvsiddharth" target="_blank">GitHub</a>
+  </div>
+ </header>
+ <div class="container">
+    <h2>About Me</h2>
+    <p>Hi! I'm a Computer Scientist and a Mathematician with 1+ years of Internships as Experience. I specialize in creating responsive and user-friendly Applications, and designing and testing ML Models or Algorithms.</p>
+    <h2>Projects</h2>
+    <div class="gallery">
+      <img id="project1" src="/home/sid/Documents/Portfolio Website/assets/rust.png" alt = "Rust" onclick="openModal('project1Modal')">
+      <img id="project2" src="/home/sid/Documents/Portfolio Website/assets/python.webp" alt="Python" onclick="openModal('project2Modal')">
+      <img id="project3" src="/home/sid/Documents/Portfolio Website/assets/js.png" alt="JavaScript" onclick="openModal('project3Modal')">
+      <!-- Add more project images as needed -->
+    </div>
+
+    <!-- Project 1 Modal -->
+    <div id="project1Modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('project1Modal')">&times;</span>
+        <h2>Rust</h2>
+        <div class="gallery">
+          <img src="/home/sid/Documents/Portfolio Website/assets/rust.png" alt="Rust">
+          <div class="right-side">
+        </div>
+        <ul>
+          <li><a href="https://github.com/jvsiddharth/rust-neuralnet" target="_blank">Neural Network.</a></li>
+          <li><a href="https://github.com/jvsiddharth/rustorrent target="_blank">Blockchain Torrent Client.</a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+
+    <!-- Project 2 Modal -->
+    <div id="project2Modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('project2Modal')">&times;</span>
+        <h2>Python</h2>
+        <div class="gallery">
+          <img src="/home/sid/Documents/Portfolio Website/assets/python.webp" alt="Python">
+          <div class="right-side">
+          </div>
+          <ul>
+            <li><a href="https://github.com/jvsiddharth/docbot" target="_blank">PDF Trainable Chat-Bot.</a></li>
+            <li><a href="https://github.com/jvsiddharth/local-diffusion-text2image" target="_blank">Locally Trainable Diffusion.</a></li>
+            <li><a href="https://github.com/jvsiddharth/ML-projects" target="_blank">Machine Learning Projects.</a></li>
+            <li><a href="https://github.com/jvsiddharth/projects" target="_blank">Various Additional Projects.</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+    <!-- Project 3 Modal -->
+    <div id="project3Modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('project3Modal')">&times;</span>
+        <h2>Others</h2>
+        <div class="gallery">
+          <img src="/home/sid/Documents/Portfolio Website/assets/js.png" alt="Python">
+          <div class="right-side">
+          </div>
+          <ul>
+            <li><a href="https://github.com/jvsiddharth/LLM-API" target="_blank">Node API for LLM.</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+    <!-- Add more modals as needed -->
+    <h2 id="education">Education</h2>
+    <div class="gallery">
+      <img id="Master's" src="/home/sid/Documents/Portfolio Website/assets/manipal.webp" alt="Project 1" onclick="openModal('education1Modal')">
+      <img id="Bachelor's" src="/home/sid/Documents/Portfolio Website/assets/mumbai.png" alt="Project 2" onclick="openModal('education2Modal')">
+      <img id="Courses" src="/home/sid/Documents/Portfolio Website/assets/courses.png" alt="Project 3" onclick="openModal('education3Modal')">
+      <!-- Add more project images as needed -->
+    </div>
+    <div id="education1Modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('education1Modal')">&times;</span>
+          <h2>Master's Degree</h2>
+          <div class="gallery">
+            <img src="/home/sid/Documents/Portfolio Website/assets/manipal.webp" alt="manipal">
+            <div class="right-side">
+            </div>
+            <ul>
+              <li><a href="https://manipal.edu/mit/program-list/mca.html" target="_blank">Master's in Computer Applications.</a></li>
+            </ul>
+          </div>
+          </div>
+        </div>
+  
+  
+      <!-- Project 2 Modal -->
+      <div id="education2Modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('education2Modal')">&times;</span>
+          <h2>Bachelor's Degree</h2>
+          <div class="gallery">
+            <img src="/home/sid/Documents/Portfolio Website/assets/mumbai.png" alt="mumbai">
+            <div class="right-side">
+            </div>
+            <ul>
+              <li><a href="https://archive.mu.ac.in/syllabus/4.1%20%20TYBSc%20%20Mathematics.pdf" target="_blank">Bachelor's in Science, Honors Mathematics.</a></li>
+            </ul>
+          </div>
+          </div>
+        </div>
+  
+  
+      <!-- Project 3 Modal -->
+      <div id="education3Modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('education3Modal')">&times;</span>
+          <h2>Additional Trainings</h2>
+          <div class="gallery">
+            <img src="/home/sid/Documents/Portfolio Website/assets/courses.png" alt="courses">
+            <div class="right-side">
+            </div>
+            <ul>
+              <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/53R3D6AGP526" target="_blank">IBM Machine Learning.</a></li>
+            </ul>
+            <ul>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/RC8XLQJ5SK5A" target="_blank">IBM Python for Data Science and AI Applications.</a></li>
+            </ul>
+            <ul>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/HN26YL6PL8TA" target="_blank">Meta Programming with JavaScript.</a></li>
+            </ul>  
+          </div>
+          </div>
+        </div>
+  
+ </div>
+</body>
+</html>
+
+
+
+
+
+Mumbai, India 
+<p>I use linux btw</p>
