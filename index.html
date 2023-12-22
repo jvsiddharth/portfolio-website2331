@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Siddharth Jadhav - Portfolio</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+ <style>
+    body {
+      font-family: 'Fira Code', monospace;
+      background-color: #262123; /* Darker background */
+      color: #fdf7ff; /* Light text */
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      animation: colorChange 20s infinite;
+    }
+
+    @keyframes colorChange {
+      0% { background-color: #262123; }
+      50% { background-color: #3E3A39; }
+      100% { background-color: #262123; }
+    }
+
+    header {
+      background-color: #DAFDBA; /* Lighter green */
+      color: #262123; /* Darker text */
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #262123; /* Dark background */
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* White shadow effect */
+      border-radius: 8px;
+    }
+
+    h2 {
+      margin-top: 20px;
+      font-size: 28px;
+      color: #DAFDBA; /* Lighter green */
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 50%;
+      transition: transform .2s;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* White shadow effect */
+    }
+
+    .location-info {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 18px;
+      color: #000000; /* Lighter green */
+    }
+
+    /* Social icons */
+    header .socials a {
+      color: #000000; /* Lighter green */
+      font-size: 16px; 
+      margin: 0 6px; /* Reduced margin */
+      transition: color 0.3s ease-in-out;
+    }
+
+    header .socials a:hover {
+      color: #8CB369; /* Darker green on hover */
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      color: #262123; /* Darker text */
+    }
+
+    .modal-content {
+      color: #1a100b; /* Lighter green */
+      background-color: #fdf7ff; /* Light background for modal content */
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      color: #000; /* Black text */
+    }
+
+    .modal-content h2 {
+      color: #000000; /* Lighter green */
+    }
+
+    .modal-content p {
+      color: #000000; /* Black */
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 24px; /* Smaller close button */
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      background-color: #DAFDBA; /* Light background for modal content */
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      color: #262123; /* Darker text */
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 24px; /* Smaller close button */
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+    }
+ </style>
+ <script>
+    function openModal(project) {
+      var modal = document.getElementById(project);
+      modal.style.display = "block";
+    }
+
+    function closeModal(project) {
+      var modal = document.getElementById(project);
+      modal.style.display = "none";
+    }
+ </script>
+</head>
+<body>
+ <header>
+    <h1>Siddharth Jadhav</h1>
+    <p>Fresher | Computer Scientist</p>
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/siddharth-jadhav-b291a4160/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/jvsiddharth" target="_blank">GitHub</a>
+  </div>
+ </header>
+ <div class="container">
+    <h2>About Me</h2>
+    <p>Hi! I specialize in designing and testing ML Models, Algorithms and creating responsive user-friendly Applications. I am 22 Years old, I have 1+ Year of Industry Experience as Research and Data Analysis Intern.</p>
+    <h2>Projects</h2>
+    <div class="gallery">
+      <img src="https://i.ibb.co/Rvjrnfm/rust.png" alt = "Rust" border="0" onclick="openModal('project1Modal')">
+      <img src="https://i.ibb.co/L1JM5kR/python.webp" alt="python" border="0" alt="Python" onclick="openModal('project2Modal')">
+      <img src="https://i.ibb.co/0cHtGRW/js.png" alt="js" border="0" alt="JavaScript" onclick="openModal('project3Modal')">
+      <!-- Add more project images as needed -->
+    </div>
+
+    <!-- Project 1 Modal -->
+    <div id="project1Modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('project1Modal')">&times;</span>
+        <h2>Rust</h2>
+        <div class="gallery">
+          <img src="https://i.ibb.co/Rvjrnfm/rust.png" alt = "Rust">
+          <div class="right-side">
+        </div>
+        <ul>
+          <li><a href="https://github.com/jvsiddharth/rust-neuralnet" target="_blank">Neural Network.</a></li>
+          <li><a href="https://github.com/jvsiddharth/rustorrent" target="_blank">Blockchain Torrent Client.</a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+
+    <!-- Project 2 Modal -->
+    <div id="project2Modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('project2Modal')">&times;</span>
+        <h2>Python</h2>
+        <div class="gallery">
+          <img src="https://i.ibb.co/L1JM5kR/python.webp" alt="python">
+          <div class="right-side">
+          </div>
+          <ul>
+            <li><a href="https://github.com/jvsiddharth/docbot" target="_blank">PDF Trainable Chat-Bot.</a></li>
+            <li><a href="https://github.com/jvsiddharth/local-diffusion-text2image" target="_blank">Locally Trainable Diffusion.</a></li>
+            <li><a href="https://github.com/jvsiddharth/ML-projects" target="_blank">Machine Learning Projects.</a></li>
+            <li><a href="https://github.com/jvsiddharth/projects" target="_blank">Various Additional Projects.</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+    <!-- Project 3 Modal -->
+    <div id="project3Modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('project3Modal')">&times;</span>
+        <h2>Others</h2>
+        <div class="gallery">
+          <img src="https://i.ibb.co/0cHtGRW/js.png" alt="js">
+        </ul>
+          <div class="right-side">
+          </div>
+          <ul>
+            <li><a href="https://github.com/jvsiddharth/LLM-API" target="_blank">Node API for LLM.</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+    <!-- Add more modals as needed -->
+    <h2 id="education">Education</h2>
+    <div class="gallery">
+      <img src="https://i.ibb.co/jZ6CM0D/manipal.webp" alt="manipal" border="0" onclick="openModal('education1Modal')">
+      <img src="https://i.ibb.co/4Y4zdxL/mumbai.png" alt="mumbai" border="0" onclick="openModal('education2Modal')">
+      <img src="https://i.ibb.co/mcRJBKZ/courses.png" alt="courses" border="0" onclick="openModal('education3Modal')">
+    </div>
+    <div id="education1Modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('education1Modal')">&times;</span>
+          <h2>Master's Degree</h2>
+          <div class="gallery">
+            <img src="https://i.ibb.co/jZ6CM0D/manipal.webp" alt="manipal">
+            <div class="right-side">
+            </div>
+            <ul>
+              <li><a href="https://manipal.edu/mit/program-list/mca.html" target="_blank">Master's in Computer Applications.</a></li>
+            </ul>
+          </div>
+          </div>
+        </div>
+  
+  
+      <!-- Project 2 Modal -->
+      <div id="education2Modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('education2Modal')">&times;</span>
+          <h2>Bachelor's Degree</h2>
+          <div class="gallery">
+            <img src="https://i.ibb.co/4Y4zdxL/mumbai.png" alt="mumbai">
+            <div class="right-side">
+            </div>
+            <ul>
+              <li><a href="https://archive.mu.ac.in/syllabus/4.1%20%20TYBSc%20%20Mathematics.pdf" target="_blank">Bachelor's in Science, Honors Mathematics.</a></li>
+            </ul>
+          </div>
+          </div>
+        </div>
+  
+  
+      <!-- Project 3 Modal -->
+      <div id="education3Modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('education3Modal')">&times;</span>
+          <h2>Additional Trainings</h2>
+          <div class="gallery">
+            <img src="https://i.ibb.co/mcRJBKZ/courses.png" alt="courses">
+            <div class="right-side">
+            </div>
+            <ul>
+              <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/53R3D6AGP526" target="_blank">IBM Machine Learning.</a></li>
+            </ul>
+            <ul>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/RC8XLQJ5SK5A" target="_blank">IBM Python for Data Science and AI Applications.</a></li>
+            </ul>
+            <ul>
+              <li><a href="https://www.coursera.org/account/accomplishments/certificate/HN26YL6PL8TA" target="_blank">Meta Programming with JavaScript.</a></li>
+            </ul>  
+          </div>
+          </div>
+        </div>
+  
+ </div>
+</body>
+</html>
+
+
+
+
+
+Mumbai, India 
